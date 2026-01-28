@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Birthday Love 💖</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Floating Hearts Background -->
+    <div class="hearts"></div>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+      <div class="logo">
+        🎀 HBD SAYANGG
+        <span>Untuk: <b>EYINN x Fikaa</b></span>
+      </div>
+
+      <div class="nav-actions">
+        <button class="theme-btn" onclick="toggleDarkMode()">🌙</button>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+      </div>
+
+      <nav id="menu">
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('album')">Avakin Album</a>
+      </nav>
+    </header>
+
+    <!-- DATE FIXED -->
+    <div class="date-fixed" id="dateBox"></div>
+
+    <!-- HOME PAGE -->
+    <section id="home" class="page active">
+      <div class="hero-card">
+        <h1>Happy Birthday 💖</h1>
+        <h2>SAYANGKU EYINN ✨</h2>
+
+        <p>Aku cuma bisa ucapin gini ke kamu... 🎀</p>
+
+        <!-- ONLY ONE BUTTON (HILANG SETELAH DIKLIK) -->
+        <button id="openBtn" class="gift-btn" onclick="showMessage()">
+          💌 HEHE
+        </button>
+
+        <!-- Hidden Message -->
+        <div class="gift-area" id="giftArea">
+          <div class="gift-icon">🎂</div>
+
+          <div class="message-box">
+            <p id="typingText"></p>
+          </div>
+        </div>
+
+        <!-- Music -->
+        <audio id="music" src="one-only.mp3" loop></audio>
+      </div>
+    </section>
+
+    <!-- ALBUM PAGE -->
+    <section id="album" class="page">
+      <div class="album-card">
+        <h1>🌙 Avakin Memories</h1>
+        <p>Album Avakin Life 💕 ✨</p>
+
+        <div class="gallery">
+          <div class="photo"><img src="foto1.jpg" /></div>
+          <div class="photo"><img src="foto2.jpg" /></div>
+          <div class="photo"><img src="foto3.jpg" /></div>
+          <div class="photo"><img src="foto4.jpg" /></div>
+        </div>
+
+        <button class="back-btn" onclick="showPage('home')">⬅ Kembali</button>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

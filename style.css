@@ -1,0 +1,317 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe6f2, #e9ddff);
+  color: #3a003a;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+/* Floating Hearts Background */
+.hearts {
+  position: fixed;
+  inset: 0;
+  background-image: url("https://i.ibb.co/0f9JxkN/hearts-bg.png");
+  opacity: 0.15;
+  animation: floatHearts 20s linear infinite;
+  z-index: -1;
+}
+
+@keyframes floatHearts {
+  from { background-position: 0 0; }
+  to { background-position: 2000px 2000px; }
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(255,255,255,0.65);
+  z-index: 100;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff2f92;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: normal;
+  color: #5a005a;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.theme-btn,
+.menu-btn {
+  border: none;
+  cursor: pointer;
+  font-size: 1.3rem;
+  padding: 10px 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.8);
+  transition: 0.3s;
+}
+
+.theme-btn:hover,
+.menu-btn:hover {
+  transform: scale(1.15);
+}
+
+/* MENU */
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  cursor: pointer;
+  font-weight: 600;
+  color: #5a005a;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background: rgba(255, 47, 146, 0.15);
+}
+
+/* DATE FIXED */
+.date-fixed {
+  position: fixed;
+  top: 85px;
+  left: 20px;
+  background: rgba(255,255,255,0.85);
+  padding: 10px 18px;
+  border-radius: 18px;
+  font-weight: bold;
+  color: #ff2f92;
+}
+
+/* PAGE */
+.page {
+  display: none;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 140px 20px 60px;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* HERO CARD */
+.hero-card {
+  max-width: 720px;
+  width: 100%;
+  padding: 60px;
+  border-radius: 35px;
+  background: rgba(255,255,255,0.92);
+  box-shadow: 0 0 50px rgba(255, 47, 146, 0.25);
+  text-align: center;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-card h1 {
+  font-size: 3rem;
+  color: #ff2f92;
+}
+
+.hero-card h2 {
+  margin-top: 8px;
+  font-size: 1.6rem;
+  color: #7a00ff;
+}
+
+.hero-card p {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a004a;
+}
+
+/* BUTTON */
+.gift-btn {
+  margin-top: 30px;
+  padding: 16px 50px;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg, #ff2f92, #7a00ff);
+  box-shadow: 0 0 25px rgba(255, 47, 146, 0.35);
+  transition: 0.35s;
+}
+
+.gift-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Hidden Gift Area */
+.gift-area {
+  margin-top: 25px;
+  display: none;
+  animation: fadeUp 1.2s ease;
+}
+
+.gift-icon {
+  font-size: 4rem;
+  animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-15px); }
+}
+
+.message-box {
+  margin-top: 15px;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 230, 242, 0.95);
+  font-weight: bold;
+  color: #ff2f92;
+}
+
+/* ALBUM */
+.album-card {
+  max-width: 850px;
+  width: 100%;
+  padding: 55px;
+  border-radius: 35px;
+  background: rgba(255,255,255,0.92);
+  text-align: center;
+  box-shadow: 0 0 50px rgba(122, 0, 255, 0.25);
+}
+
+.gallery {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+}
+
+.photo {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 170px;
+  box-shadow: 0 0 20px rgba(255, 47, 146, 0.2);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  margin-top: 25px;
+  padding: 14px 40px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  background: linear-gradient(90deg, #7a00ff, #ff2f92);
+  color: white;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(255,255,255,0.95);
+    padding: 15px;
+    border-radius: 20px;
+    gap: 10px;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  .hero-card {
+    padding: 40px 22px;
+  }
+
+  .gift-btn {
+    width: 100%;
+  }
+}
+
+/* 🌙 DARK MODE FULL FIX */
+body.dark {
+  background: linear-gradient(135deg, #0c0012, #1a0028);
+  color: white;
+}
+
+body.dark .navbar {
+  background: rgba(15, 0, 25, 0.85);
+}
+
+body.dark .logo {
+  color: #ff85d6;
+}
+
+body.dark .logo span {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+body.dark nav {
+  background: rgba(25, 0, 35, 0.95);
+}
+
+body.dark nav a {
+  color: white;
+}
+
+body.dark .date-fixed {
+  background: rgba(30, 0, 45, 0.85);
+  color: #ff85d6;
+}
+
+body.dark .hero-card,
+body.dark .album-card {
+  background: rgba(25, 0, 40, 0.88);
+}
+
+body.dark p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+body.dark .message-box {
+  background: rgba(40, 0, 60, 0.95);
+  color: #ffd6f5;
+}
